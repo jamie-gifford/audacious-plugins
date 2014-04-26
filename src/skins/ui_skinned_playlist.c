@@ -550,12 +550,6 @@ gboolean ui_skinned_playlist_key (GtkWidget * list, GdkEventKey * event)
           case GDK_KEY_End:
             select_single (data, FALSE, active_length - 1);
             break;
-          case GDK_KEY_Return:
-            select_single (data, TRUE, 0);
-            aud_playlist_set_position (active_playlist,
-             aud_playlist_get_focus (active_playlist));
-            aud_drct_play_playlist (active_playlist);
-            break;
           case GDK_KEY_Escape:
             select_single (data, FALSE, aud_playlist_get_position
              (active_playlist));
@@ -587,6 +581,12 @@ gboolean ui_skinned_playlist_key (GtkWidget * list, GdkEventKey * event)
             break;
           case GDK_KEY_End:
             select_extend (data, FALSE, active_length - 1);
+            break;
+          case GDK_KEY_Return:
+            select_single (data, TRUE, 0);
+            aud_playlist_set_position (active_playlist,
+             aud_playlist_get_focus (active_playlist));
+            aud_drct_play_playlist (active_playlist);
             break;
           default:
             return FALSE;

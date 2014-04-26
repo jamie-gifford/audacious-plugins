@@ -185,9 +185,11 @@ static void focus_change (void * user, int row)
 
 static void activate_row (void * user, int row)
 {
-    int list = ((PlaylistWidgetData *) user)->list;
-    aud_playlist_set_position (list, row);
-    aud_drct_play_playlist (list);
+	if (! aud_drct_get_playing() || aud_drct_get_paused()) {
+	    int list = ((PlaylistWidgetData *) user)->list;
+	    aud_playlist_set_position (list, row);
+	    aud_drct_play_playlist (list);
+	}    
 }
 
 static void right_click (void * user, GdkEventButton * event)
