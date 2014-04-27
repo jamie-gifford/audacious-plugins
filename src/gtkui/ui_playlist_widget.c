@@ -38,7 +38,7 @@ static const GType pw_col_types[PW_COLS] = {G_TYPE_INT, G_TYPE_STRING,
  G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING,
  G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING,
  G_TYPE_STRING};
-static const bool_t pw_col_widths[PW_COLS] = {7, -1, -1, 4, -1, 2, -1, 3, 7,
+static const bool_t pw_col_widths[PW_COLS] = {7, -1, -1, 4, -1, 2, 4, 3, 7,
  -1, -1, -1, 3};
 static const bool_t pw_col_label[PW_COLS] = {FALSE, TRUE, TRUE, TRUE, TRUE,
  FALSE, TRUE, FALSE, FALSE, TRUE, TRUE, TRUE, FALSE};

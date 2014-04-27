@@ -76,7 +76,7 @@ static GtkAccelGroup * accel;
 static GtkWidget * window, * vbox_outer, * menu_box, * menu, * toolbar, * vbox,
  * infoarea, * statusbar;
 static GtkToolItem * menu_button, * search_button, * button_play, * button_stop,
- * button_shuffle, * button_repeat;
+ * button_shuffle, * button_repeat, * button_lock;
 static GtkWidget * slider, * label_time;
 static GtkWidget * menu_main, * menu_rclick, * menu_tab;
 
@@ -626,6 +626,8 @@ static void update_toggles (void * data, void * user)
      aud_get_bool (NULL, "repeat"));
     gtk_toggle_tool_button_set_active ((GtkToggleToolButton *) button_shuffle,
      aud_get_bool (NULL, "shuffle"));
+    gtk_toggle_tool_button_set_active ((GtkToggleToolButton *) button_lock,
+     aud_get_bool (NULL, "lock"));
 }
 
 static void toggle_repeat (GtkToggleToolButton * button)
@@ -636,6 +638,11 @@ static void toggle_repeat (GtkToggleToolButton * button)
 static void toggle_shuffle (GtkToggleToolButton * button)
 {
     aud_set_bool (NULL, "shuffle", gtk_toggle_tool_button_get_active (button));
+}
+
+static void toggle_lock (GtkToggleToolButton * button)
+{
+    aud_set_bool (NULL, "lock", gtk_toggle_tool_button_get_active (button));
 }
 
 static void toggle_search_tool (GtkToggleToolButton * button)
@@ -672,6 +679,8 @@ static void ui_hooks_associate(void)
     hook_associate ("playlist set playing", ui_playlist_notebook_set_playing, NULL);
     hook_associate ("playlist position", ui_playlist_notebook_position, NULL);
     hook_associate ("set shuffle", update_toggles, NULL);
+    hook_associate ("set lock", update_toggles, NULL);
+    hook_associate ("set lock", ui_playlist_notebook_refresh, NULL);
     hook_associate ("set repeat", update_toggles, NULL);
     hook_associate ("config save", (HookFunction) config_save, NULL);
 }
@@ -689,6 +698,8 @@ static void ui_hooks_disassociate(void)
     hook_dissociate ("playlist set playing", ui_playlist_notebook_set_playing);
     hook_dissociate ("playlist position", ui_playlist_notebook_position);
     hook_dissociate ("set shuffle", update_toggles);
+    hook_dissociate ("set lock", update_toggles);
+    hook_dissociate ("set lock", ui_playlist_notebook_refresh);
     hook_dissociate ("set repeat", update_toggles);
     hook_dissociate ("config save", (HookFunction) config_save);
 }
@@ -762,11 +773,13 @@ static bool_t init (void)
     gtk_widget_set_no_show_all (slider, TRUE);
     gtk_widget_set_no_show_all (label_time, TRUE);
 
-    /* repeat and shuffle buttons */
+    /* repeat and shuffle and lock buttons */
     button_repeat = toggle_button_new ("media-playlist-repeat", toggle_repeat);
     gtk_toolbar_insert ((GtkToolbar *) toolbar, button_repeat, -1);
     button_shuffle = toggle_button_new ("media-playlist-shuffle", toggle_shuffle);
     gtk_toolbar_insert ((GtkToolbar *) toolbar, button_shuffle, -1);
+    button_lock = toggle_button_new ("media-record", toggle_lock);
+    gtk_toolbar_insert ((GtkToolbar *) toolbar, button_lock, -1);
 
     /* volume button */
     GtkToolItem * boxitem2 = gtk_tool_item_new ();

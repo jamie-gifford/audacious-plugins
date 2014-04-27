@@ -487,6 +487,25 @@ void ui_playlist_notebook_update (void * data, void * user)
     gtk_notebook_set_current_page ((GtkNotebook *) notebook, aud_playlist_get_active ());
 }
 
+void ui_playlist_notebook_refresh (void * data, void * user)
+{
+    int lists = aud_playlist_count ();
+
+    for (int list = 0; list < lists; list ++)
+    {
+        GtkWidget * treeview = playlist_get_treeview (list);
+
+        int at = 0;
+        int count = aud_playlist_entry_count (list);
+        int level = PLAYLIST_UPDATE_STRUCTURE;
+
+        ui_playlist_widget_update (treeview, level, at, count);
+        audgui_list_set_highlight (treeview, aud_playlist_get_position (list));
+    }
+
+    gtk_notebook_set_current_page ((GtkNotebook *) notebook, aud_playlist_get_active ());
+}
+
 void ui_playlist_notebook_position (void * data, void * user)
 {
     int list = GPOINTER_TO_INT (data);
