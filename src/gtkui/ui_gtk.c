@@ -75,7 +75,7 @@ static GtkAccelGroup * accel;
 
 static GtkWidget * window, * vbox_outer, * menu_box, * menu, * toolbar, * vbox,
  * infoarea, * statusbar;
-static GtkToolItem * menu_button, * search_button, * button_play, * button_stop,
+static GtkToolItem * menu_button, * search_button, * button_play, * button_stop, * button_cortina,
  * button_shuffle, * button_repeat, * button_lock;
 static GtkWidget * slider, * label_time;
 static GtkWidget * menu_main, * menu_rclick, * menu_tab;
@@ -401,6 +401,16 @@ static void pause_cb (void)
      aud_drct_get_paused () ? "media-playback-start" : "media-playback-pause");
 }
 
+static void cortina_fade_begin_cb(void) {
+	AUDDBG("FADE BEGIN HOOK\n");
+    gtk_tool_button_set_icon_name ((GtkToolButton *) button_cortina, "appointment-new");
+}
+
+static void cortina_fade_end_cb(void) {
+	AUDDBG("FADE END HOOK\n");
+	gtk_tool_button_set_icon_name ((GtkToolButton *) button_cortina, "face-monkey");
+}
+
 static void ui_playback_begin (void)
 {
     pause_cb ();
@@ -659,6 +669,12 @@ static void toggle_lock (GtkToggleToolButton * button)
     aud_set_bool (NULL, "lock", gtk_toggle_tool_button_get_active (button));
 }
 
+static void cortina_fade (void)
+{
+	AUDDBG("Invoking Hook: cortina fade");
+    hook_call ("cortina fade", NULL);
+}
+
 static void toggle_search_tool (GtkToggleToolButton * button)
 {
     aud_plugin_enable (search_tool, gtk_toggle_tool_button_get_active (button));
@@ -697,6 +713,8 @@ static void ui_hooks_associate(void)
     hook_associate ("set lock", ui_playlist_notebook_refresh, NULL);
     hook_associate ("set repeat", update_toggles, NULL);
     hook_associate ("config save", (HookFunction) config_save, NULL);
+    hook_associate ("cortina fade begin", (HookFunction) cortina_fade_begin_cb, NULL);
+    hook_associate ("cortina fade end", (HookFunction) cortina_fade_end_cb, NULL);
 }
 
 static void ui_hooks_disassociate(void)
@@ -763,6 +781,7 @@ static bool_t init (void)
     button_stop = toolbar_button_add (toolbar, aud_drct_stop, "media-playback-stop");
     toolbar_button_add (toolbar, aud_drct_pl_prev, "media-skip-backward");
     toolbar_button_add (toolbar, aud_drct_pl_next, "media-skip-forward");
+    button_cortina = toolbar_button_add (toolbar, cortina_fade, "face-monkey");
 
     /* time slider and label */
     GtkToolItem * boxitem1 = gtk_tool_item_new ();
