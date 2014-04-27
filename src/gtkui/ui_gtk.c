@@ -589,16 +589,21 @@ static bool_t window_keypress_cb (GtkWidget * widget, GdkEventKey * event, void 
 
 static bool_t playlist_keypress_cb (GtkWidget * widget, GdkEventKey * event, void * unused)
 {
+	int locked = aud_get_bool(NULL, "lock");
+
     switch (event->state & (GDK_SHIFT_MASK | GDK_CONTROL_MASK | GDK_MOD1_MASK))
     {
     case 0:
+    case GDK_SHIFT_MASK:
         switch (event->keyval)
         {
         case GDK_KEY_Escape:
             ui_playlist_notebook_position (GINT_TO_POINTER (aud_playlist_get_active ()), NULL);
             return TRUE;
         case GDK_KEY_Delete:
-            playlist_delete_selected ();
+        	if ((event->state & GDK_SHIFT_MASK) || ! locked) {
+                playlist_delete_selected ();
+        	}
             return TRUE;
         case GDK_KEY_Menu:
             popup_menu_rclick (0, event->time);
