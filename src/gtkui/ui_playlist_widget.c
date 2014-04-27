@@ -185,7 +185,7 @@ static void focus_change (void * user, int row)
 
 static void activate_row (void * user, int row)
 {
-	if (! aud_drct_get_playing() || aud_drct_get_paused()) {
+	if (! aud_drct_get_playing() || aud_drct_get_paused() || ! aud_get_bool(NULL, "lock")) {
 	    int list = ((PlaylistWidgetData *) user)->list;
 	    aud_playlist_set_position (list, row);
 	    aud_drct_play_playlist (list);

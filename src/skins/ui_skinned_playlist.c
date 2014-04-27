@@ -557,6 +557,14 @@ gboolean ui_skinned_playlist_key (GtkWidget * list, GdkEventKey * event)
           case GDK_KEY_Delete:
             delete_selected (data);
             break;
+          case GDK_KEY_Return:
+        	if (! aud_get_bool(NULL, "lock")) {
+              select_single (data, TRUE, 0);
+              aud_playlist_set_position (active_playlist,
+                 aud_playlist_get_focus (active_playlist));
+              aud_drct_play_playlist (active_playlist);
+        	}
+            break;
           default:
             return FALSE;
         }

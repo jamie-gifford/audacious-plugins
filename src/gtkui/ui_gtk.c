@@ -484,10 +484,19 @@ static void window_mapped_cb (GtkWidget * widget, void * unused)
 
 static bool_t window_keypress_cb (GtkWidget * widget, GdkEventKey * event, void * unused)
 {
-    switch (event->state & (GDK_SHIFT_MASK | GDK_CONTROL_MASK | GDK_MOD1_MASK))
+	int lock_mask = aud_get_bool(NULL, "lock") ? GDK_SHIFT_MASK : 0;
+    int masked_state = event->state & (GDK_SHIFT_MASK | GDK_CONTROL_MASK | GDK_MOD1_MASK);
+
+    switch (masked_state)
     {
-      case GDK_SHIFT_MASK:;
-        GtkWidget * focused = gtk_window_get_focus ((GtkWindow *) window);
+      case 0:
+      case GDK_SHIFT_MASK:
+
+    	if (masked_state != lock_mask) {
+    		return FALSE;
+    	}
+
+    	GtkWidget * focused = gtk_window_get_focus ((GtkWindow *) window);
 
         /* escape key returns focus to playlist */
         if (event->keyval == GDK_KEY_Escape)
