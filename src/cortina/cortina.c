@@ -99,7 +99,6 @@ static gboolean cortina_advance(gpointer data) {
 	AUDDBG("advance...\n");
 	aud_drct_pl_next();
 	aud_drct_stop();
-	hook_call("cortina fade end", NULL);
 	AUDDBG("...advance\n");
 	return FALSE;
 }
@@ -108,8 +107,21 @@ static gboolean cortina_restore_volume(gpointer data) {
 	AUDDBG("restore vol...\n");
 
     aud_drct_set_volume_main(100);
+	hook_call("cortina fade end", NULL);
+
+	AUDDBG("...restore vol\n");
+	return FALSE;
+}
+
+static gboolean cortina_restore_volume_play(gpointer data) {
+	AUDDBG("restore vol...\n");
+
+    aud_drct_set_volume_main(100);
 	aud_drct_play();
-    AUDDBG("...restore vol\n");
+
+	hook_call("cortina fade end", NULL);
+
+	AUDDBG("...restore vol\n");
 	return FALSE;
 }
 
@@ -123,6 +135,8 @@ static void *cortina_stop_thread(void *args)
 
     gboolean do_fade;
 
+    gboolean abort_fade = 0;
+
     AUDDBG("cortina_stop triggered\n");
 
     // aud_drct_get_volume_main(&currvol),
@@ -133,16 +147,21 @@ static void *cortina_stop_thread(void *args)
     fade_vols.start = currvol;
     fade_vols.end = 0;
 
+    AUDDBG("Get lock...\n");
+
     /* lock */
     pthread_mutex_lock(&cortina_lock);
 
-    do_fade = ! is_fading;
+    AUDDBG(".. got lock...\n");
 
-    if (! is_fading) {
-    	is_fading = TRUE;
-    }
+    do_fade = ! is_fading;
+    is_fading = do_fade;
+
+    AUDDBG("Set is_fading to %d\n", is_fading);
 
     pthread_mutex_unlock(&cortina_lock);
+
+    AUDDBG(".. released lock\n");
 
     if (! do_fade) {
     	return NULL;
@@ -161,6 +180,19 @@ static void *cortina_stop_thread(void *args)
 	aud_drct_set_volume_main((gint)fade_vols.start);
 
 	for (i = 0; i < adiff; i++) {
+
+	    pthread_mutex_lock(&cortina_lock);
+
+	    if (! is_fading) {
+	    	abort_fade = 1;
+	    }
+
+	    pthread_mutex_unlock(&cortina_lock);
+
+	    if (abort_fade) {
+	    	break;
+	    }
+
 		threadsleep((gfloat)fading / (gfloat)adiff);
 		g_idle_add(cortina_decrement_volume, NULL);
 
@@ -169,15 +201,25 @@ static void *cortina_stop_thread(void *args)
 
 	AUDDBG("volume = %f%%\n", (gdouble)fade_vols.end);
 
-	AUDDBG("drct_pl_next\n");
+	if (! abort_fade) {
 
-	g_idle_add(cortina_advance, NULL);
+		AUDDBG("drct_pl_next\n");
 
-	threadsleep(1.0f);
+		g_idle_add(cortina_advance, NULL);
 
-	AUDDBG("drct_set_volume_main\n");
+		threadsleep(1.0f);
 
-	g_idle_add(cortina_restore_volume, NULL);
+		AUDDBG("drct_set_volume_main\n");
+
+		g_idle_add(cortina_restore_volume_play, NULL);
+
+	} else {
+
+		AUDDBG("drct_set_volume_main\n");
+
+		g_idle_add(cortina_restore_volume, NULL);
+
+	}
 
 	AUDDBG("unlock\n");
 
