@@ -248,6 +248,12 @@ static void parse_gain_text(const char *text, int *value, int *unit)
     *value = 0;
     *unit = 1;
 
+    if (*text == '+')
+    {
+        sign = 1;
+        text++;
+    }
+
     if (*text == '-')
     {
         sign = -1;
