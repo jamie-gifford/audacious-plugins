@@ -480,11 +480,7 @@ static int open_handle (struct neon_handle * handle, uint64_t startbyte)
         ne_add_server_auth (handle->session, NE_AUTH_BASIC, server_auth_callback, (void *) handle);
         ne_set_session_flag (handle->session, NE_SESSFLAG_ICYPROTO, 1);
         ne_set_session_flag (handle->session, NE_SESSFLAG_PERSIST, 0);
-
-#ifdef HAVE_NE_SET_CONNECT_TIMEOUT
         ne_set_connect_timeout (handle->session, 10);
-#endif
-
         ne_set_read_timeout (handle->session, 10);
         ne_set_useragent (handle->session, "Audacious/" PACKAGE_VERSION);
 
@@ -803,7 +799,7 @@ static int64_t neon_fread_real (void * ptr, int64_t size, int64_t nmemb, VFSFile
              * b) deliver at least one byte to the reader */
             _DEBUG ("<%p> Expecting %d bytes of ICY metadata", h, (icy_metalen*16));
 
-            if (free_rb (& h->rb) - icy_metalen * 16 < size)
+            if (used_rb (& h->rb) - icy_metalen * 16 < size)
             {
                 /* There is not enough data. We do not have much choice at this point,
                  * so we'll deliver the metadata as normal data to the reader and
@@ -835,7 +831,7 @@ static int64_t neon_fread_real (void * ptr, int64_t size, int64_t nmemb, VFSFile
 
     if (h->reader_status.status == NEON_READER_EOF)
     {
-        if (! free_rb_locked (& h->rb))
+        if (! used_rb_locked (& h->rb))
         {
             _DEBUG ("<%p> stream EOF reached and buffer empty", h);
             h->eof = TRUE;

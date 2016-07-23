@@ -56,7 +56,7 @@ static void equalizerwin_set_band (gint band, gfloat value);
 static void position_cb (void * data, void * user_data);
 
 GtkWidget *equalizerwin;
-static GtkWidget *equalizerwin_graph;
+GtkWidget *equalizerwin_graph;
 
 static GtkWidget *equalizerwin_on, *equalizerwin_auto;
 
@@ -284,6 +284,7 @@ equalizerwin_create_widgets(void)
     button_on_release (equalizerwin_shaded_shade, (ButtonCB) equalizerwin_shade_toggle);
 
     equalizerwin_graph = eq_graph_new ();
+    gtk_widget_set_no_show_all (equalizerwin_graph, TRUE);  // shown or hidden in skin_load()
     window_put_widget (equalizerwin, FALSE, equalizerwin_graph, 86, 17);
 
     equalizerwin_preamp = eq_slider_new (_("Preamp"));
@@ -339,6 +340,7 @@ equalizerwin_create_window(void)
     /* this will hide only mainwin. it's annoying! yaz */
     gtk_window_set_transient_for(GTK_WINDOW(equalizerwin),
                                  GTK_WINDOW(mainwin));
+    gtk_window_set_skip_pager_hint(GTK_WINDOW(equalizerwin), TRUE);
     gtk_window_set_skip_taskbar_hint(GTK_WINDOW(equalizerwin), TRUE);
 
     gtk_widget_set_app_paintable(equalizerwin, TRUE);

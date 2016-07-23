@@ -229,6 +229,7 @@ playlistwin_select_search(void)
     searchdlg_helptext = gtk_label_new( _("Select entries in playlist by filling one or more "
       "fields. Fields use regular expressions syntax, case-insensitive. If you don't know how "
       "regular expressions work, simply insert a literal portion of what you're searching for.") );
+    gtk_label_set_max_width_chars( GTK_LABEL(searchdlg_helptext), 70 );
     gtk_label_set_line_wrap( GTK_LABEL(searchdlg_helptext) , TRUE );
     gtk_box_pack_start( GTK_BOX(searchdlg_hbox) , searchdlg_logo , FALSE , FALSE , 0 );
     gtk_box_pack_start( GTK_BOX(searchdlg_hbox) , searchdlg_helptext , FALSE , FALSE , 0 );
@@ -722,6 +723,7 @@ playlistwin_create_window(void)
 
     gtk_window_set_transient_for(GTK_WINDOW(playlistwin),
                                  GTK_WINDOW(mainwin));
+    gtk_window_set_skip_pager_hint(GTK_WINDOW(playlistwin), TRUE);
     gtk_window_set_skip_taskbar_hint(GTK_WINDOW(playlistwin), TRUE);
 
     gtk_widget_add_events(playlistwin, GDK_POINTER_MOTION_MASK |

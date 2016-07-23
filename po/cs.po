@@ -3,21 +3,22 @@
 # This file is distributed under the same license as the Audacious Plugins package.
 #
 # Translators:
-# jui <appukonrad@gmail.com>, 2012-2013
+# Jiří Vírava <appukonrad@gmail.com>, 2012-2013
 # Based on audacious-1.2.2.cs.po by Jan Nárovec <finn@sendmail.cz>, 2004
 # fri, 2012-2013
+# fri, 2014
 # fri, 2012
 # Petr Pisar <petr.pisar@atlas.cz>, 2007-2012
-# petr.simacek <petr.simacek@gmail.com>, 2012
-# petr.simacek <petr.simacek@gmail.com>, 2012
-# petr.simacek <petr.simacek@gmail.com>, 2013
+# Petr Šimáček <petr.simacek@gmail.com>, 2012
+# Petr Šimáček <petr.simacek@gmail.com>, 2012
+# Petr Šimáček <petr.simacek@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
-"Project-Id-Version: Audacious Plugins Plugins\n"
+"Project-Id-Version: Audacious Plugins\n"
 "Report-Msgid-Bugs-To: http://redmine.audacious-media-player.org/\n"
-"POT-Creation-Date: 2014-04-21 23:02+0200\n"
-"PO-Revision-Date: 2014-04-11 16:24+0000\n"
-"Last-Translator: Radioactiveman <thomas-lange2@gmx.de>\n"
+"POT-Creation-Date: 2014-10-15 21:40+0200\n"
+"PO-Revision-Date: 2014-09-11 08:23+0000\n"
+"Last-Translator: Petr Šimáček <petr.simacek@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/audacious/language/"
 "cs/)\n"
 "Language: cs\n"
@@ -40,11 +41,11 @@ msgstr "prostorový zvuk"
 
 #: src/aac/libmp4.c:313
 msgid "AAC (MP4) Decoder"
-msgstr ""
+msgstr "AAC (MP4) dekodér"
 
 #: src/aac-raw/aac.c:476
 msgid "AAC (Raw) Decoder"
-msgstr ""
+msgstr "AAC (Raw) dekodér"
 
 #: src/adplug/adplug-xmms.cc:137 src/modplug/modplugbmp.cxx:348
 #: src/psf/plugin.c:122 src/vtx/vtx.c:62 src/xsf/plugin.c:80
@@ -55,11 +56,11 @@ msgstr "Sekvencován"
 msgid "AdPlug (AdLib Player)"
 msgstr "AdPlug (AdLib přehrávač)"
 
-#: src/alarm/alarm.c:778
+#: src/alarm/alarm.c:776
 msgid "Set Alarm ..."
-msgstr ""
+msgstr "Nastavit budík"
 
-#: src/alarm/alarm.c:806
+#: src/alarm/alarm.c:804
 msgid ""
 "A plugin that can be used to start playing at a certain time.\n"
 "\n"
@@ -69,7 +70,7 @@ msgstr ""
 "\n"
 "Původně napsal Adam Feakin a Daniel Stodden."
 
-#: src/alarm/alarm.c:811 src/alarm/interface.c:86
+#: src/alarm/alarm.c:809 src/alarm/interface.c:86
 msgid "Alarm"
 msgstr "Budík"
 
@@ -178,12 +179,12 @@ msgstr "Nastavení budíku"
 
 #: src/alarm/interface.c:180 src/filewriter/mp3.c:690
 msgid "_OK"
-msgstr ""
+msgstr "_OK"
 
 #: src/alarm/interface.c:180 src/amidi-plug/i_configure-fluidsynth.c:55
 #: src/aosd/aosd_ui.c:930 src/filewriter/mp3.c:690 src/hotkey/gui.c:486
 msgid "_Cancel"
-msgstr ""
+msgstr "_Zrušit"
 
 #: src/alarm/interface.c:188 src/alarm/interface.c:252
 #: src/alarm/interface.c:267
@@ -326,13 +327,13 @@ msgstr ""
 msgid "ALSA Output"
 msgstr "ALSA výstup:"
 
-#: src/amidi-plug/amidi-plug.c:466
+#: src/amidi-plug/amidi-plug.c:464
 msgid "AMIDI-Plug (MIDI Player)"
 msgstr "AMIDI-Plug (MIDI přehrávač)"
 
 #: src/amidi-plug/i_configure.c:96
 msgid "Override default gain:"
-msgstr ""
+msgstr "Přepsat výchozí gain:"
 
 #: src/amidi-plug/i_configure.c:102
 msgid "Override default polyphony:"
@@ -344,7 +345,7 @@ msgstr ""
 
 #: src/amidi-plug/i_configure.c:110 src/amidi-plug/i_configure.c:116
 msgid "On"
-msgstr ""
+msgstr "On"
 
 #: src/amidi-plug/i_configure.c:114
 msgid "Override default chorus:"
@@ -352,7 +353,7 @@ msgstr ""
 
 #: src/amidi-plug/i_configure.c:122 src/console/plugin.c:33
 msgid "<b>Playback</b>"
-msgstr ""
+msgstr "<b>Playback</b>"
 
 #: src/amidi-plug/i_configure.c:123
 msgid "Transpose:"
@@ -362,29 +363,17 @@ msgstr ""
 msgid "Drum shift:"
 msgstr ""
 
-#: src/amidi-plug/i_configure.c:127
-msgid "<b>Advanced</b>"
-msgstr ""
-
-#: src/amidi-plug/i_configure.c:128
-msgid "Extract comments from MIDI file"
-msgstr ""
-
-#: src/amidi-plug/i_configure.c:130
-msgid "Extract lyrics from MIDI file"
-msgstr ""
-
-#: src/amidi-plug/i_configure.c:134
+#: src/amidi-plug/i_configure.c:129
 msgid "<b>SoundFont</b>"
 msgstr ""
 
-#: src/amidi-plug/i_configure.c:136
+#: src/amidi-plug/i_configure.c:131
 msgid "<b>Synthesizer</b>"
-msgstr ""
+msgstr "<b>Synthesizer</b>"
 
-#: src/amidi-plug/i_configure.c:141
+#: src/amidi-plug/i_configure.c:136
 msgid "Sampling rate:"
-msgstr ""
+msgstr "Vzorkovací frekvence:"
 
 #: src/amidi-plug/i_configure-fluidsynth.c:52
 msgid "AMIDI-Plug - select SoundFont file"
@@ -392,7 +381,7 @@ msgstr "AMIDI-Plug – vyberte soundfontový soubor"
 
 #: src/amidi-plug/i_configure-fluidsynth.c:56
 msgid "_Open"
-msgstr ""
+msgstr "_Otevřít"
 
 #: src/amidi-plug/i_configure-fluidsynth.c:227
 msgid "Filename"
@@ -402,60 +391,60 @@ msgstr "Jméno souboru"
 msgid "Size (bytes)"
 msgstr "Velikost (v bajtech):"
 
-#: src/amidi-plug/i_fileinfo.c:176
+#: src/amidi-plug/i_fileinfo.c:184
 msgid "Name:"
 msgstr "Jméno:"
 
-#: src/amidi-plug/i_fileinfo.c:203
+#: src/amidi-plug/i_fileinfo.c:202
 msgid "<span size=\"smaller\"> MIDI Info </span>"
 msgstr "<span size=\"small\"> Podrobnosti o MIDI </span>"
 
-#: src/amidi-plug/i_fileinfo.c:217
+#: src/amidi-plug/i_fileinfo.c:216
 msgid "Format:"
 msgstr "Formát:"
 
-#: src/amidi-plug/i_fileinfo.c:220
+#: src/amidi-plug/i_fileinfo.c:219
 msgid "Length (msec):"
 msgstr "Délka (ms):"
 
-#: src/amidi-plug/i_fileinfo.c:223
+#: src/amidi-plug/i_fileinfo.c:222
 msgid "No. of Tracks:"
 msgstr "č. skladby"
 
-#: src/amidi-plug/i_fileinfo.c:229
+#: src/amidi-plug/i_fileinfo.c:228
 msgid "variable"
 msgstr "proměnlivé"
 
-#: src/amidi-plug/i_fileinfo.c:231
+#: src/amidi-plug/i_fileinfo.c:230
 msgid "BPM:"
 msgstr "BPM:"
 
-#: src/amidi-plug/i_fileinfo.c:239
+#: src/amidi-plug/i_fileinfo.c:238
 msgid "BPM (wavg):"
 msgstr "BPM (váž.):"
 
-#: src/amidi-plug/i_fileinfo.c:242
+#: src/amidi-plug/i_fileinfo.c:241
 msgid "Time Div:"
 msgstr "Čas. pom.:"
 
-#: src/amidi-plug/i_fileinfo.c:253
+#: src/amidi-plug/i_fileinfo.c:252
 msgid "<span size=\"smaller\"> MIDI Comments and Lyrics </span>"
 msgstr "<span size=\"small\"> Komentáře a text MIDI skladby </span>"
 
-#: src/amidi-plug/i_fileinfo.c:302
+#: src/amidi-plug/i_fileinfo.c:299
 msgid "* no comments available in this MIDI file *"
 msgstr "* v MIDI souboru se nenachází žádné komentáře *"
 
-#: src/amidi-plug/i_fileinfo.c:314
+#: src/amidi-plug/i_fileinfo.c:311
 msgid "* no lyrics available in this MIDI file *"
 msgstr "* v MIDI souboru se nenachází text skladby *"
 
-#: src/amidi-plug/i_fileinfo.c:341 src/amidi-plug/i_utils.c:40
+#: src/amidi-plug/i_fileinfo.c:321 src/amidi-plug/i_utils.c:40
 #: src/filewriter/vorbis.c:210 src/ladspa/plugin.c:521 src/ladspa/plugin.c:588
 msgid "_Close"
 msgstr "_Zavřít"
 
-#: src/amidi-plug/i_fileinfo.c:366
+#: src/amidi-plug/i_fileinfo.c:346
 msgid "  (invalid UTF-8)"
 msgstr "  (neplatné UTF8)"
 
@@ -691,11 +680,11 @@ msgstr "OSD pro Audacious – nastavení"
 
 #: src/aosd/aosd_ui.c:927
 msgid "_Test"
-msgstr ""
+msgstr "_Test"
 
 #: src/aosd/aosd_ui.c:933 src/hotkey/gui.c:491
 msgid "_Set"
-msgstr ""
+msgstr "_Nastavit"
 
 #: src/aosd/aosd_ui.c:940
 msgid "Position"
@@ -757,7 +746,7 @@ msgstr "Předvolby:"
 msgid "Bauer Stereophonic-to-Binaural (BS2B)"
 msgstr "Bauer Stereophonic-to-Binaural (BS2B)"
 
-#: src/cairo-spectrum/cairo-spectrum.c:297
+#: src/cairo-spectrum/cairo-spectrum.c:296
 msgid "Spectrum Analyzer"
 msgstr "Analyzátor spektra"
 
@@ -955,7 +944,7 @@ msgstr "Výšky:"
 
 #: src/console/plugin.c:38
 msgid "Echo:"
-msgstr ""
+msgstr "Ozvěna:"
 
 #: src/console/plugin.c:40
 msgid "Default song length:"
@@ -1073,11 +1062,11 @@ msgstr ""
 
 #: src/delete-files/delete-files.c:120
 msgid "Move to Trash"
-msgstr ""
+msgstr "Přesunout do koše"
 
 #: src/delete-files/delete-files.c:125
 msgid "Do you want to permanently delete the selected files?"
-msgstr ""
+msgstr "Opravdu chcete trvale odstranit vybrané soubory?"
 
 #: src/delete-files/delete-files.c:126 src/skins/preset-list.c:416
 #: src/skins/preset-list.c:432
@@ -1092,11 +1081,11 @@ msgstr "Zrušit"
 
 #: src/delete-files/delete-files.c:131 src/delete-files/delete-files.c:172
 msgid "Delete Files"
-msgstr ""
+msgstr "Smazat soubory"
 
 #: src/delete-files/delete-files.c:147
 msgid "Delete Selected Files"
-msgstr ""
+msgstr "Smazat vybrané soubory"
 
 #: src/delete-files/delete-files.c:162
 msgid "<b>Delete Method</b>"
@@ -1144,7 +1133,7 @@ msgstr ""
 msgid "Echo"
 msgstr "Ozvěna"
 
-#: src/ffaudio/ffaudio-core.c:589
+#: src/ffaudio/ffaudio-core.c:561
 msgid ""
 "Multi-format audio decoding plugin for Audacious using\n"
 "FFmpeg multimedia framework (http://www.ffmpeg.org/)\n"
@@ -1160,7 +1149,7 @@ msgstr ""
 "Williama Pitcocka <nenolod@nenolod.net>\n"
 "Matti Hämäläinena <ccr@tnsp.org>"
 
-#: src/ffaudio/ffaudio-core.c:641
+#: src/ffaudio/ffaudio-core.c:613
 msgid "FFmpeg Plugin"
 msgstr "FFmpeg Plugin"
 
@@ -1542,7 +1531,7 @@ msgstr "Neumisťovat"
 msgid "Disable"
 msgstr "Zakázat"
 
-#: src/gtkui/layout.c:226 src/search-tool/search-tool.c:786
+#: src/gtkui/layout.c:226 src/search-tool/search-tool.c:797
 msgid "Search Tool"
 msgstr "Vyhledávací nástroj"
 
@@ -1579,7 +1568,7 @@ msgid "_Quit"
 msgstr "_Konec"
 
 #: src/gtkui/menus.c:139 src/gtkui/menus.c:254
-#: src/search-tool/search-tool.c:674 src/statusicon/statusicon.c:264
+#: src/search-tool/search-tool.c:685 src/statusicon/statusicon.c:264
 msgid "_Play"
 msgstr "_Hrát"
 
@@ -1753,7 +1742,7 @@ msgstr "_Ekvalizér"
 
 #: src/gtkui/menus.c:216
 msgid "E_ffects ..."
-msgstr ""
+msgstr "E_fekty ..."
 
 #: src/gtkui/menus.c:219
 msgid "Show _Menu Bar"
@@ -1777,7 +1766,7 @@ msgstr "Ukázat _zbývající čas"
 
 #: src/gtkui/menus.c:231
 msgid "_Visualizations ..."
-msgstr ""
+msgstr "_Vizualizace"
 
 #: src/gtkui/menus.c:234
 msgid "_File"
@@ -1833,7 +1822,7 @@ msgstr ""
 
 #: src/gtkui/settings.c:36
 msgid "Always show tabs"
-msgstr ""
+msgstr "Vždy zobrazovat panely"
 
 #: src/gtkui/settings.c:39
 msgid "Show entry counts"
@@ -2007,7 +1996,7 @@ msgstr "<b>Navázání kláves:</b>"
 
 #: src/hotkey/gui.c:476
 msgid "_Add"
-msgstr ""
+msgstr "_Přidat"
 
 #: src/hotkey/plugin.c:67
 msgid ""
@@ -2042,11 +2031,11 @@ msgstr ""
 
 #: src/jack/jack.c:202
 msgid "Connection mode:"
-msgstr ""
+msgstr "Režim připojení:"
 
 #: src/jack/jack.c:205
 msgid "Enable debug printing"
-msgstr ""
+msgstr "Povolit ladící výpisy"
 
 #: src/jack/jack.c:432
 msgid ""
@@ -2231,7 +2220,7 @@ msgstr "Chybí metadata skladby"
 msgid "Connecting to lyrics.wikia.com ..."
 msgstr "Připojování k lyrics.wikia.com ..."
 
-#: src/lyricwiki/lyricwiki.c:411
+#: src/lyricwiki/lyricwiki.c:406
 msgid "LyricWiki Plugin"
 msgstr "LyricWiki Plugin"
 
@@ -2408,7 +2397,7 @@ msgstr "MPG123 Plugin"
 msgid "MPRIS 2 Server"
 msgstr "MPRIS 2 Server"
 
-#: src/neon/neon.c:1056
+#: src/neon/neon.c:1052
 msgid "Neon HTTP/HTTPS Plugin"
 msgstr "Neon HTTP/HTTPS Plugin"
 
@@ -2714,14 +2703,14 @@ msgstr "Neznámý interpret"
 msgid "Unknown Album"
 msgstr "Neznámé Album"
 
-#: src/search-tool/search-tool.c:625
+#: src/search-tool/search-tool.c:636
 #, c-format
 msgid ""
 "%s\n"
 " on %s by %s"
 msgstr "%s⏎ na %s od %s"
 
-#: src/search-tool/search-tool.c:631
+#: src/search-tool/search-tool.c:642
 #, c-format
 msgid "%d album"
 msgid_plural "%d albums"
@@ -2729,7 +2718,7 @@ msgstr[0] "%d album"
 msgstr[1] "%d alba"
 msgstr[2] "%d alb"
 
-#: src/search-tool/search-tool.c:633
+#: src/search-tool/search-tool.c:644
 #, c-format
 msgid ""
 "%s\n"
@@ -2743,7 +2732,7 @@ msgstr[0] ""
 msgstr[1] "%s⏎ %s, %d skladby"
 msgstr[2] "%s⏎ %s, %d skladeb"
 
-#: src/search-tool/search-tool.c:639
+#: src/search-tool/search-tool.c:650
 #, c-format
 msgid ""
 "%s\n"
@@ -2757,19 +2746,19 @@ msgstr[0] ""
 msgstr[1] " %s⏎ %d skladby od %s"
 msgstr[2] " %s⏎ %d skladeb od %s"
 
-#: src/search-tool/search-tool.c:675
+#: src/search-tool/search-tool.c:686
 msgid "_Create Playlist"
 msgstr "_Vytvořit seznam skladeb"
 
-#: src/search-tool/search-tool.c:676
+#: src/search-tool/search-tool.c:687
 msgid "_Add to Playlist"
 msgstr "Přid_at do seznamu skladeb"
 
-#: src/search-tool/search-tool.c:713
+#: src/search-tool/search-tool.c:724
 msgid "Search library"
 msgstr "Prohledat knihovnu"
 
-#: src/search-tool/search-tool.c:717
+#: src/search-tool/search-tool.c:728
 msgid ""
 "To import your music library into Audacious, choose a folder and then click "
 "the \"refresh\" icon."
@@ -2777,11 +2766,11 @@ msgstr ""
 "Hudební knihovnu se do Audacious naimportuje tak, že vyberete složku a pak "
 "kliknete na ikonu „obnovit“."
 
-#: src/search-tool/search-tool.c:725
+#: src/search-tool/search-tool.c:736
 msgid "Please wait ..."
 msgstr "Prosím, počkejte…"
 
-#: src/search-tool/search-tool.c:747
+#: src/search-tool/search-tool.c:758
 msgid "Choose Folder"
 msgstr "Vybrat složku"
 
@@ -3329,51 +3318,51 @@ msgstr "Obecné"
 msgid "Visualization"
 msgstr "Znázornění"
 
-#: src/skins/ui_equalizer.c:289
+#: src/skins/ui_equalizer.c:290
 msgid "Preamp"
 msgstr "Předzesílení"
 
-#: src/skins/ui_equalizer.c:293
+#: src/skins/ui_equalizer.c:294
 msgid "31 Hz"
 msgstr "31 Hz"
 
-#: src/skins/ui_equalizer.c:294
+#: src/skins/ui_equalizer.c:295
 msgid "63 Hz"
 msgstr "63 Hz"
 
-#: src/skins/ui_equalizer.c:294
+#: src/skins/ui_equalizer.c:295
 msgid "125 Hz"
 msgstr "125 Hz"
 
-#: src/skins/ui_equalizer.c:294
+#: src/skins/ui_equalizer.c:295
 msgid "250 Hz"
 msgstr "250 Hz "
 
-#: src/skins/ui_equalizer.c:294
+#: src/skins/ui_equalizer.c:295
 msgid "500 Hz"
 msgstr "500 Hz"
 
-#: src/skins/ui_equalizer.c:294
+#: src/skins/ui_equalizer.c:295
 msgid "1 kHz"
 msgstr "1 kHz"
 
-#: src/skins/ui_equalizer.c:295
+#: src/skins/ui_equalizer.c:296
 msgid "2 kHz"
 msgstr "2 kHz"
 
-#: src/skins/ui_equalizer.c:295
+#: src/skins/ui_equalizer.c:296
 msgid "4 kHz"
 msgstr "4 kHz"
 
-#: src/skins/ui_equalizer.c:295
+#: src/skins/ui_equalizer.c:296
 msgid "8 kHz"
 msgstr "8 kHz"
 
-#: src/skins/ui_equalizer.c:295
+#: src/skins/ui_equalizer.c:296
 msgid "16 kHz"
 msgstr "16 kHz"
 
-#: src/skins/ui_equalizer.c:337
+#: src/skins/ui_equalizer.c:338
 msgid "Audacious Equalizer"
 msgstr "Ekvalizér"
 
@@ -3461,39 +3450,39 @@ msgstr ""
 "regulárním výrazům nerozumíte, jednoduše vložte části textu, které chcete "
 "vyhledat."
 
-#: src/skins/ui_playlist.c:237
+#: src/skins/ui_playlist.c:238
 msgid "Title: "
 msgstr "Název: "
 
-#: src/skins/ui_playlist.c:245
+#: src/skins/ui_playlist.c:246
 msgid "Album: "
 msgstr "Album: "
 
-#: src/skins/ui_playlist.c:253
+#: src/skins/ui_playlist.c:254
 msgid "Artist: "
 msgstr "Umělec: "
 
-#: src/skins/ui_playlist.c:261
+#: src/skins/ui_playlist.c:262
 msgid "Filename: "
 msgstr "Jméno souboru: "
 
-#: src/skins/ui_playlist.c:270
+#: src/skins/ui_playlist.c:271
 msgid "Clear previous selection before searching"
 msgstr "Před hledáním vymazat předchozí výběr"
 
-#: src/skins/ui_playlist.c:273
+#: src/skins/ui_playlist.c:274
 msgid "Automatically toggle queue for matching entries"
 msgstr "Shodující se položky automaticky zařadit/vyřadit z fronty"
 
-#: src/skins/ui_playlist.c:276
+#: src/skins/ui_playlist.c:277
 msgid "Create a new playlist with matching entries"
 msgstr "Ze shodujících se položek vytvořit nový seznam skladeb"
 
-#: src/skins/ui_playlist.c:721
+#: src/skins/ui_playlist.c:722
 msgid "Audacious Playlist Editor"
 msgstr "Zobrazit editor seznamu skladeb"
 
-#: src/skins/ui_playlist.c:755
+#: src/skins/ui_playlist.c:757
 #, c-format
 msgid "%s (%d of %d)"
 msgstr "%s (%d z %d)"
@@ -3511,7 +3500,7 @@ msgstr "Nezabalený skin Winampu 2.x"
 msgid "Could not create directory (%s): %s\n"
 msgstr "Adresář („%s“) nebylo možné vytvořit: %s\n"
 
-#: src/sndfile/plugin.c:350
+#: src/sndfile/plugin.c:348
 msgid ""
 "Based on the xmms_sndfile plugin:\n"
 "Copyright (C) 2000, 2002 Erik de Castro Lopo\n"
@@ -3533,7 +3522,7 @@ msgid ""
 "Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
 
-#: src/sndfile/plugin.c:369
+#: src/sndfile/plugin.c:367
 msgid "Sndfile Plugin"
 msgstr "Sndfile modul"
 
@@ -3576,36 +3565,36 @@ msgstr "(prázdné znamená výchozí)"
 msgid "OK"
 msgstr "Budiž"
 
-#: src/song_change/song_change.c:54
+#: src/song_change/song_change.c:46
 msgid "Song Change"
 msgstr "Změna skladby"
 
-#: src/song_change/song_change.c:428
+#: src/song_change/song_change.c:353
 msgid "Command to run when Audacious starts a new song."
 msgstr "Příkaz, který se provede, když Audacious začne novou skladbu."
 
-#: src/song_change/song_change.c:430 src/song_change/song_change.c:436
-#: src/song_change/song_change.c:442 src/song_change/song_change.c:448
+#: src/song_change/song_change.c:355 src/song_change/song_change.c:361
+#: src/song_change/song_change.c:367 src/song_change/song_change.c:373
 msgid "Command:"
 msgstr "Příkaz:"
 
-#: src/song_change/song_change.c:434
+#: src/song_change/song_change.c:359
 msgid "Command to run toward the end of a song."
 msgstr "Příkaz, který se provede na konci skladby."
 
-#: src/song_change/song_change.c:440
+#: src/song_change/song_change.c:365
 msgid "Command to run when Audacious reaches the end of the playlist."
 msgstr ""
 "Příkaz, který se provede, když Audacious dosáhne konce seznamu skladeb."
 
-#: src/song_change/song_change.c:446
+#: src/song_change/song_change.c:371
 msgid ""
 "Command to run when title changes for a song (i.e. network streams titles)."
 msgstr ""
 "Příkaz, který se provede při změně názvu skladbu (tj. názvy v síťových "
 "proudech)."
 
-#: src/song_change/song_change.c:452
+#: src/song_change/song_change.c:377
 msgid ""
 "You can use the following format strings which\n"
 "will be substituted before calling the command\n"
@@ -3624,7 +3613,7 @@ msgid ""
 "%T: Track title"
 msgstr ""
 
-#: src/song_change/song_change.c:479
+#: src/song_change/song_change.c:404
 msgid ""
 "<span size='small'>Parameters passed to the shell should be encapsulated in "
 "quotes. Doing otherwise is a security risk.</span>"
@@ -3632,7 +3621,7 @@ msgstr ""
 "<span size='small'>Parametry předávané shellu by měly být uzavřeny do "
 "uvozovek. Nerespektování této rady představuje bezpečnostní riziko.</span>"
 
-#: src/song_change/song_change.c:490
+#: src/song_change/song_change.c:420
 msgid "Commands"
 msgstr "Příkazy"
 
@@ -3675,7 +3664,7 @@ msgstr "<b>Rychlost a výška</b>"
 
 #: src/speed-pitch/speed-pitch.c:228
 msgid "Speed:"
-msgstr "Rachlost:"
+msgstr "Rychlost:"
 
 #: src/speed-pitch/speed-pitch.c:231
 msgid "Pitch:"
@@ -3689,7 +3678,7 @@ msgstr "Rychlost a výška:"
 msgid "Se_ttings ..."
 msgstr ""
 
-#: src/statusicon/statusicon.c:371
+#: src/statusicon/statusicon.c:375
 msgid ""
 "Status Icon Plugin\n"
 "\n"
@@ -3700,35 +3689,35 @@ msgid ""
 "the system tray area of the window manager."
 msgstr ""
 
-#: src/statusicon/statusicon.c:378
+#: src/statusicon/statusicon.c:382
 msgid "<b>Mouse Scroll Action</b>"
 msgstr "<b>Reakce na rolování myší</b>"
 
-#: src/statusicon/statusicon.c:379
+#: src/statusicon/statusicon.c:383
 msgid "Change volume"
 msgstr "Změnit hlasitost"
 
-#: src/statusicon/statusicon.c:382
+#: src/statusicon/statusicon.c:386
 msgid "Change playing song"
 msgstr "Změnit hranou skladbu"
 
-#: src/statusicon/statusicon.c:385
+#: src/statusicon/statusicon.c:389
 msgid "<b>Other Settings</b>"
 msgstr "<b>Ostatní nastavení</b>"
 
-#: src/statusicon/statusicon.c:386
+#: src/statusicon/statusicon.c:390
 msgid "Disable the popup window"
 msgstr "Zakázat vyskakovací okno"
 
-#: src/statusicon/statusicon.c:388
+#: src/statusicon/statusicon.c:392
 msgid "Close to the system tray"
 msgstr "Zavřít do systémové oblasti"
 
-#: src/statusicon/statusicon.c:390
+#: src/statusicon/statusicon.c:394
 msgid "Advance in playlist when scrolling upward"
 msgstr "Přecházet v seznamu skladeb, když se roluje nahoru"
 
-#: src/statusicon/statusicon.c:399
+#: src/statusicon/statusicon.c:403
 msgid "Status Icon"
 msgstr "Stavová ikona"
 
@@ -3841,3 +3830,12 @@ msgstr "2SF Dekodér"
 #: src/xspf/xspf.c:438
 msgid "XML Shareable Playlists (XSPF)"
 msgstr "XML Shareable Playlists (XSPF)"
+
+#~ msgid "32.0 kHz:"
+#~ msgstr "32.0 kHz:"
+
+#~ msgid "88.2 kHz:"
+#~ msgstr "88.2 kHz:"
+
+#~ msgid "176.4 kHz:"
+#~ msgstr "176.4 kHz:"
